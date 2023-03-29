@@ -1,0 +1,46 @@
+﻿<Window x:Class="LastProjectPracticeCsharp.TopManagerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LastProjectPracticeCsharp"
+        mc:Ignorable="d"
+        Title="TopManagerWindow" Height="600" Width="1100">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button x:Name="BusinessPartnersButton"
+  Style="{StaticResource MaterialDesignFlatDarkBgButton}"
+  ToolTip="MaterialDesignFlatDarkButton"
+  Content="Бизнесс-Партнёры"
+            VerticalAlignment="Top"
+            Grid.Column="1"
+  IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Background="#FFA52270" Click="BusinessPartnersButton_Click" Cursor="Hand" />
+
+        <Button x:Name="ReturnButton"
+  Style="{StaticResource MaterialDesignFlatDarkBgButton}"
+  ToolTip="MaterialDesignFlatDarkButton"
+  Content="Вернуться обратно"
+            VerticalAlignment="Top"
+            Grid.Column="2"
+  IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Background="#FFA52270" Click="ReturnButton_Click" Cursor="Hand" />
+
+        <Button x:Name="SocialMediasButton"
+  Style="{StaticResource MaterialDesignFlatDarkBgButton}"
+  ToolTip="MaterialDesignFlatDarkButton"
+  Content="Социальные сети"
+            VerticalAlignment="Top"
+            Grid.Column="0"
+  IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Click="SocialMediasButton_Click" Background="#FFA52270" />
+
+        <Frame x:Name="ManagerFrame" Grid.Row="1" Grid.ColumnSpan="3"></Frame>
+        
+    </Grid>
+</Window>

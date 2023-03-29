@@ -1,0 +1,66 @@
+﻿<Page x:Class="LastProjectPracticeCsharp.PartnershipsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LastProjectPracticeCsharp"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PartnershipsPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="0.4*"/>
+        </Grid.RowDefinitions>
+        <DataGrid x:Name="SMDataGrid" Grid.ColumnSpan="2" Grid.RowSpan="5" SelectionChanged="SMDataGrid_SelectionChanged">
+            
+        </DataGrid>
+
+        <Button x:Name="CreateButton" Grid.Row="4"
+            Style="{StaticResource MaterialDesignRaisedDarkButton}" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="90" Click="CreateButton_Click" Background="#FFA52270" Cursor="Hand">
+            Создать
+        </Button>
+
+        <Button x:Name="DeleteButton" Grid.Row="4"
+            Style="{StaticResource MaterialDesignRaisedDarkButton}" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="90" Click="DeleteButton_Click" Background="#FFA52270">
+            Удалить
+        </Button>
+
+        <Button x:Name="ChangeButton" Grid.Row="4"
+            Style="{StaticResource MaterialDesignRaisedDarkButton}" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="85" Cursor="Hand" Click="ChangeButton_Click" Background="#FFA52270">
+            Изм.
+        </Button>
+
+        <TextBox x:Name="PriceTextBox"
+                 Grid.Row="1"
+                 Grid.Column="2"
+                 VerticalAlignment="Top"
+                 Margin="10 10 10 10"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+  />
+        <TextBox x:Name="TimeTextBox"
+                 Grid.Row="2"
+                 Grid.Column="2"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+  VerticalAlignment="Top"  Margin="10 10 10 15"/>
+        <TextBox x:Name="NameTextBox"
+                 Grid.Row="3"
+                 Grid.Column="2"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+  VerticalAlignment="Top" Margin="10 10 10 10" />
+        <TextBlock Grid.Column='2' VerticalAlignment="Top" Margin="10 35 10 10" Text="Введите данные" Grid.Row="0" Foreground="#FFA52270" ></TextBlock>
+        <TextBlock Grid.Column='2' VerticalAlignment="Bottom" Margin="10 10 10 10" Text="Введите цену" Grid.Row="1" Foreground="#FFA52270" ></TextBlock>
+        <TextBlock Grid.Column='2' VerticalAlignment="Bottom" Grid.Row="2" Margin="10 10 10 10" Text="Введите длительность" Foreground="#FFA52270" ></TextBlock>
+        <TextBlock Grid.Column='2' VerticalAlignment="Bottom" Grid.Row="3" Margin="10 10 10 10" Text="Введите Название компании" Foreground="#FFA52270" ></TextBlock>
+
+    </Grid>
+</Page>

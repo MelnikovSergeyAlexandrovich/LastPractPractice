@@ -1,0 +1,67 @@
+﻿<Page x:Class="LastProjectPracticeCsharp.Receipts"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LastProjectPracticeCsharp"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Receipts">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.4*"/>
+            <ColumnDefinition Width="0.4*"/>
+            <ColumnDefinition Width="0.4*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="0.3*"/>
+        </Grid.RowDefinitions>
+
+        
+        <ComboBox x:Name="ServiceComboBox"
+        Grid.Column="2" Grid.ColumnSpan="3"
+        VerticalAlignment="Top"
+        Margin="10 5 10 0"
+        IsEditable="True" Grid.Row="2"/>
+        
+        <TextBlock Grid.ColumnSpan="3" Grid.Column="2" VerticalAlignment="Center" Grid.Row =" 2" Margin="10 10 10 20" Text="Выберите Сервис" Foreground="#FF1B9E11"></TextBlock>
+        <TextBlock Grid.Row="3" Grid.ColumnSpan="3" Grid.Column="2" VerticalAlignment="Center" Margin="10 10 10 20" Text="Выберите инф-ю" Foreground="#FF1B9E11"></TextBlock>
+
+        <ComboBox x:Name="ReceiptInfoComboBox"
+        Grid.Column="2" Grid.ColumnSpan="3"
+        VerticalAlignment="Top"
+        Margin="10 5 10 0"
+        IsEditable="True" Grid.Row=" 3"/>
+
+
+        <ProgressBar
+  IsIndeterminate="True" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="3" VerticalAlignment="Top" Foreground="#FF1B9E11" BorderBrush="#FF6DA43A" Background="#FF26C33E"/>
+
+        <Button x:Name="DeleteButton"
+        Style="{StaticResource MaterialDesignRaisedSecondaryButton}"
+        ToolTip="Resource name: MaterialDesignRaisedSecondaryButton"
+        Content="Удалить" Grid.Column="4" Grid.Row="4"
+        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Background="#FF1B9E11" Click="DeleteButton_Click" Cursor="Hand" />
+        
+        <DataGrid x:Name="RDataGrid" Grid.RowSpan="5" Grid.ColumnSpan="2"  />
+
+        <Button x:Name="ChangeButton"
+        Style="{StaticResource MaterialDesignRaisedSecondaryButton}"
+        ToolTip="Resource name: MaterialDesignRaisedSecondaryButton"
+        Content="Изм." Grid.Column="3" Grid.Row="4"
+        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Background="#FF1B9E11" Click="ChangeButton_Click" />
+            
+        <Button x:Name="CreateButton"
+        Style="{StaticResource MaterialDesignRaisedSecondaryButton}"
+        ToolTip="Resource name: MaterialDesignRaisedSecondaryButton"
+        Content="Создать" Grid.Column="2" Grid.Row="4"
+        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Background="#FF1B9E11" Click="CreateButton_Click" />
+    </Grid>
+</Page>
